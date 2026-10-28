@@ -1,0 +1,175 @@
+/* AURA FLORIST - CÂU HỎI THƯỜNG GẶP */
+
+/* Toàn bộ khu vực FAQ */
+.faq-page {
+    padding: 60px 0 80px;
+}
+
+/* TIÊU ĐỀ */
+.faq-header {
+    max-width: 700px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+/* Đường kẻ + icon */
+.faq-decoration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 12px;
+}
+
+.faq-decoration span {
+    width: 50px;
+    height: 1px;
+    background-color: #C5AB88;
+}
+
+.faq-decoration i {
+    color: #8c6239;
+    font-size: 20px;
+}
+
+/* Chữ nhỏ */
+.faq-label {
+    margin-bottom: 8px;
+    color: #a58c72;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 4px;
+}
+
+/* Tiêu đề */
+.faq-header h1 {
+    margin-bottom: 15px;
+    color: #4a3e3d;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+/* Mô tả */
+.faq-description {
+    margin: 0;
+    color: #777777;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* DANH SÁCH CÂU HỎI */
+.faq-list {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Một câu hỏi */
+.faq-item {
+    margin-bottom: 15px;
+    background-color: #ffffff;
+    border: 1px solid #eee4d8;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow:
+        0 3px 12px rgba(90, 75, 65, 0.05);
+    transition:
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.faq-item:hover {
+    box-shadow:
+        0 6px 18px rgba(90, 75, 65, 0.09);
+}
+
+/* CÂU HỎI */
+.faq-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    background-color: #ffffff;
+    border: none;
+    color: #4a3e3d;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+/* Hover câu hỏi */
+.faq-question:hover {
+    background-color: #f9f2e9;
+}
+
+/* Dấu + / - */
+.faq-question span {
+    flex-shrink: 0;
+    margin-left: 20px;
+    color: #8c6239;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+/* CÂU TRẢ LỜI */
+.faq-answer {
+    display: none;
+    padding:
+        0 24px
+        22px;
+    color: #666666;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* Khi câu hỏi được mở */
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+.faq-item.active .faq-question {
+    background-color: #f9f2e9;
+}
+
+/* MOBILE */
+@media (max-width: 575px) {
+    .faq-page {
+        padding: 40px 0 60px;
+    }
+
+    .faq-header {
+        margin-bottom: 30px;
+    }
+
+    .faq-header h1 {
+        font-size: 25px;
+        letter-spacing: 1px;
+    }
+
+    .faq-description {
+        font-size: 14px;
+    }
+
+    .faq-decoration span {
+        width: 35px;
+    }
+
+    .faq-question {
+        padding: 17px 18px;
+        font-size: 15px;
+    }
+
+    .faq-answer {
+        padding:
+            0 18px
+            18px;
+        font-size: 14px;
+    }
+}

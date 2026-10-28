@@ -1,0 +1,306 @@
+/* AURA FLORIST CHATBOT */
+
+/* NÚT CHAT */
+.aura-chat-button {
+    position: fixed;
+    right: 28px;
+    bottom: 28px;
+    width: 62px;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background-color: #C5AB88;
+    color: #ffffff;
+    font-size: 26px;
+    cursor: pointer;
+    z-index: 9998;
+    box-shadow:
+        0 8px 25px rgba(90, 75, 65, 0.25);
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.aura-chat-button:hover {
+    background-color: #a98c69;
+    transform: translateY(-4px);
+}
+
+/* Số thông báo */
+
+/* KHUNG CHAT */
+.aura-chatbox {
+    position: fixed;
+    right: 28px;
+    bottom: 100px;
+    width: 370px;
+
+    /* Không cho chatbot cao quá màn hình */
+    height: 540px;
+    max-height: calc(100vh - 130px);
+    display: none;
+    flex-direction: column;
+    background-color: #ffffff;
+    border: 1px solid #eee4d8;
+    border-radius: 16px;
+    overflow: hidden;
+
+    /* Phải cao hơn header/navbar. Header của bạn hiện đang có z-index rất cao. */
+    z-index: 20000;
+    box-shadow:
+        0 15px 45px rgba(60, 45, 35, 0.18);
+    animation: chatOpen 0.25s ease;
+}
+
+.aura-chatbox.show {
+    display: flex;
+}
+
+/* Khi mở */
+.aura-chatbox.show {
+    display: flex;
+}
+
+@keyframes chatOpen {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* HEADER CHAT */
+.aura-chat-header {
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 18px;
+    background-color: #F8F1E4;
+    border-bottom: 1px solid #eee4d8;
+}
+
+.chat-header-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Avatar */
+.chat-avatar {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #9b725f;
+    font-size: 21px;
+}
+
+.chat-header-info h5 {
+    margin: 0 0 4px;
+    color: #4a3e3d;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.chat-header-info p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    color: #777;
+    font-size: 12px;
+}
+
+/* Chấm online */
+.online-dot {
+    width: 7px;
+    height: 7px;
+    margin-right: 6px;
+    border-radius: 50%;
+    background-color: #65a765;
+}
+
+/* Nút đóng */
+.chat-close {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    color: #79685f;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.chat-close:hover {
+    background-color: rgba(197, 171, 136, 0.20);
+}
+
+/* BODY CHAT */
+.aura-chat-body {
+    flex: 1;
+    padding: 18px;
+    overflow-y: auto;
+    background-color: #fffdf9;
+}
+
+/* Thanh cuộn */
+.aura-chat-body::-webkit-scrollbar {
+    width: 5px;
+}
+
+.aura-chat-body::-webkit-scrollbar-thumb {
+    background-color: #d8c8b7;
+    border-radius: 10px;
+}
+
+/* TIN NHẮN */
+.chat-message {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+/* Avatar bot */
+.message-avatar {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #F4E1C5;
+    color: #8c6239;
+    font-size: 13px;
+}
+
+/* Nội dung */
+.message-content {
+    max-width: 78%;
+    padding: 11px 14px;
+    border-radius: 5px 14px 14px 14px;
+    background-color: #F8F1E4;
+    color: #554a45;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* TIN NHẮN KHÁCH HÀNG */
+.user-message {
+    justify-content: flex-end;
+}
+
+.user-message .message-content {
+    background-color: #C5AB88;
+    color: #ffffff;
+    border-radius: 14px 5px 14px 14px;
+}
+
+/* GỢI Ý NHANH */
+.quick-title {
+    margin: 18px 0 10px 38px;
+    color: #8a7770;
+    font-size: 12px;
+}
+
+.quick-options {
+    margin-left: 38px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.quick-option {
+    padding: 7px 11px;
+    border: 1px solid #dcc8b5;
+    border-radius: 20px;
+    background-color: #ffffff;
+    color: #755d50;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.quick-option:hover {
+    background-color: #F4E1C5;
+    border-color: #C5AB88;
+}
+
+/* INPUT */
+.aura-chat-input {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 15px;
+    background-color: #ffffff;
+    border-top: 1px solid #eee4d8;
+}
+
+.aura-chat-input input {
+    flex: 1;
+    height: 42px;
+    padding: 0 14px;
+    border: 1px solid #ded4ca;
+    border-radius: 22px;
+    outline: none;
+    color: #4a3e3d;
+    font-size: 13px;
+}
+
+.aura-chat-input input:focus {
+    border-color: #C5AB88;
+    box-shadow:
+        0 0 0 2px rgba(197, 171, 136, 0.15);
+}
+
+/* Nút gửi */
+.aura-chat-input button {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background-color: #C5AB88;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.aura-chat-input button:hover {
+    background-color: #a98c69;
+}
+
+/* MOBILE */
+@media (max-width: 575px) {
+    .aura-chat-button {
+        right: 18px;
+        bottom: 18px;
+        width: 55px;
+        height: 55px;
+        font-size: 23px;
+    }
+
+    .aura-chatbox {
+        width: calc(100% - 30px);
+        height: 70vh;
+        right: 15px;
+        bottom: 85px;
+    }
+}

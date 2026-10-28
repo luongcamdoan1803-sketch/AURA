@@ -1,0 +1,525 @@
+/* CONTACT PAGE - AURA FLORIST */
+
+/* HERO */
+.contact-hero {
+    background:
+        radial-gradient(circle at 85% 30%, rgba(255, 210, 210, 0.35), transparent 25%),
+        linear-gradient(135deg, #fffaf2 0%, #fae8c7 100%);
+    padding: 90px 0;
+    overflow: hidden;
+}
+
+.contact-small-title {
+    display: inline-block;
+    letter-spacing: 4px;
+    font-size: 13px;
+    color: #9a7b62;
+    margin-bottom: 18px;
+}
+
+.contact-hero h1 {
+    max-width: 700px;
+    font-size: 58px;
+    line-height: 1.15;
+    font-weight: 500;
+    color: #40352f;
+    margin-bottom: 25px;
+}
+
+.contact-hero h1 span {
+    color: #a46d68;
+    font-family: Georgia, serif;
+    font-style: italic;
+}
+
+.contact-hero p {
+    max-width: 600px;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #756961;
+    margin-bottom: 30px;
+}
+
+.contact-main-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 25px;
+    background-color: #5a4b41;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.contact-main-btn:hover {
+    background-color: #8b6f58;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* SERVICES */
+.contact-services {
+    padding: 85px 0;
+    background-color: #fffdf9;
+}
+
+.section-heading {
+    margin-bottom: 50px;
+}
+
+.section-heading span {
+    color: #a47b65;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.section-heading h2 {
+    margin-top: 10px;
+    font-size: 35px;
+    color: #5a4b41;
+    font-weight: 600;
+}
+
+.section-heading p {
+    color: #777;
+    margin-top: 10px;
+}
+
+.service-card {
+    position: relative;
+    height: 100%;
+    padding: 35px 30px;
+    background-color: white;
+    border: 1px solid #eee5dc;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(90, 75, 65, 0.1);
+}
+
+.service-card-active {
+    background-color: #fae8c7;
+    border-color: #fae8c7;
+}
+
+.service-icon {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f6eee5;
+    border-radius: 50%;
+    color: #8b6f58;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.service-card-active .service-icon {
+    background-color: white;
+}
+
+.service-card h3 {
+    color: #5a4b41;
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #777;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+.service-number {
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    font-size: 55px;
+    font-weight: 700;
+    color: rgba(90, 75, 65, 0.06);
+}
+
+/* CONTACT MAIN */
+.contact-main {
+    padding: 90px 0;
+    background-color: #f8f2e9;
+}
+
+.contact-box {
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 15px 45px rgba(90, 75, 65, 0.1);
+}
+
+/* CONTACT INFO */
+.contact-info {
+    height: 100%;
+    padding: 55px 45px;
+    background-color: #5a4b41;
+    color: white;
+}
+
+.contact-label {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #d8bda2;
+    margin-bottom: 15px;
+}
+
+.contact-info h2 {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.contact-info h2 span {
+    color: #f1c8c5;
+    font-family: Georgia, serif;
+    font-style: italic;
+}
+
+.contact-info > p {
+    color: #e6ddd7;
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+
+/* CONTACT ITEM */
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 23px;
+}
+
+.contact-item-icon {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #f1c8c5;
+}
+
+.contact-item small {
+    display: block;
+    color: #cbb9ae;
+    margin-bottom: 4px;
+}
+
+.contact-item p {
+    margin: 0;
+    color: white;
+    font-size: 14px;
+}
+
+/* SOCIAL */
+.contact-social {
+    display: flex;
+    gap: 10px;
+    margin-top: 35px;
+}
+
+.contact-social a {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.contact-social a:hover {
+    background-color: white;
+    color: #5a4b41;
+}
+
+/* CONTACT FORM */
+.contact-form {
+    height: 100%;
+    padding: 55px 50px;
+    background-color: white;
+}
+
+.contact-form h2 {
+    color: #5a4b41;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.contact-form > p {
+    color: #888;
+    margin-bottom: 30px;
+}
+
+/* INPUT */
+.contact-input {
+    margin-bottom: 22px;
+}
+
+.contact-input label {
+    display: block;
+    color: #5a4b41;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.contact-input input,
+.contact-input select,
+.contact-input textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ddd3c9;
+    border-radius: 7px;
+    background-color: #fffdfb;
+    color: #4d4540;
+    outline: none;
+    transition: 0.2s;
+    box-sizing: border-box;
+}
+
+.contact-input input:focus,
+.contact-input select:focus,
+.contact-input textarea:focus {
+    border-color: #b99a7c;
+    box-shadow: 0 0 0 3px rgba(185, 154, 124, 0.12);
+}
+
+.contact-input textarea {
+    resize: vertical;
+}
+
+/* SUBMIT */
+.contact-submit {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    border: none;
+    padding: 13px 27px;
+    background-color: #5a4b41;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-submit:hover {
+    background-color: #8b6f58;
+    transform: translateY(-2px);
+}
+
+/* CONTACT HERO IMAGE */
+.contact-hero {
+    position: relative;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(255, 248, 238, 0.95) 0%,
+            rgba(255, 248, 238, 0.75) 40%,
+            rgba(255, 248, 238, 0.25) 75%,
+            rgba(255, 248, 238, 0.1) 100%
+        ),
+        url('../images/contact-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+    .contact-hero h1 {
+        font-size: 45px;
+    }
+
+    .flower-decoration {
+        height: 300px;
+        margin-top: 30px;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 40px 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-hero h1 {
+        font-size: 36px;
+    }
+
+    .contact-hero p {
+        font-size: 15px;
+    }
+
+    .section-heading h2 {
+        font-size: 28px;
+    }
+
+    .flower-decoration {
+        transform: scale(0.85);
+    }
+
+    .contact-info h2 {
+        font-size: 30px;
+    }
+
+    .contact-form h2 {
+        font-size: 27px;
+    }
+}
+
+/* TRANG CẢM ƠN SAU KHI GỬI LIÊN HỆ */
+.contact-success-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    box-sizing: border-box;
+    background-color: #FDFBF7;
+}
+
+/* Khung cảm ơn */
+.contact-success-box {
+    width: 100%;
+    max-width: 650px;
+    padding: 60px 50px;
+    text-align: center;
+    background-color: #ffffff;
+    border: 1px solid #eee4d8;
+    border-radius: 16px;
+    box-shadow:
+        0 10px 35px rgba(90, 75, 65, 0.10);
+}
+
+/* Icon dấu tích */
+.success-icon {
+    width: 85px;
+    height: 85px;
+    margin: 0 auto 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #F8F1E4;
+    color: #8c6239;
+    font-size: 40px;
+}
+
+/* AURA FLORIST */
+.success-small {
+    margin: 0 0 10px;
+    color: #a58c72;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 4px;
+}
+
+/* Cảm ơn bạn */
+.contact-success-box h1 {
+    margin: 0 0 20px;
+    color: #4a3e3d;
+    font-size: 42px;
+    font-weight: 600;
+}
+
+/* Nội dung */
+.success-message {
+    max-width: 520px;
+    margin: 0 auto;
+    color: #777777;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* Đường trang trí */
+.success-line {
+    width: 50px;
+    height: 1px;
+    margin: 30px auto;
+    background-color: #C5AB88;
+}
+
+/* Nút về trang chủ */
+.success-btn {
+    display: inline-block;
+    padding: 13px 28px;
+    background-color: #F4E1C5;
+    color: #4a3e3d;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.success-btn:hover {
+    background-color: #C5AB88;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow:
+        0 6px 15px rgba(90, 75, 65, 0.15);
+}
+
+/* Quay lại trang liên hệ */
+.success-back {
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0;
+    color: #8c6239;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.success-back:hover {
+    color: #5a4b41;
+    text-decoration: underline;
+}
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 575px) {
+    .contact-success-page {
+        padding: 30px 15px;
+    }
+
+    .contact-success-box {
+        padding: 45px 25px;
+    }
+
+    .success-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 32px;
+    }
+
+    .contact-success-box h1 {
+        font-size: 32px;
+    }
+
+    .success-message {
+        font-size: 15px;
+    }
+
+    .success-btn {
+        padding: 12px 22px;
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,595 @@
+/* ACCOUNT - AURA FLORIST */
+.account-page {
+    padding: 40px 0 90px;
+    background-color: #FDFBF7;
+}
+
+/* HEADING */
+.account-heading {
+    max-width: 700px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.account-label {
+    margin-bottom: 8px;
+    color: #a58c72;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 4px;
+}
+
+.account-heading h1 {
+    margin: 0;
+    color: #4a3e3d;
+    font-size: 34px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.account-description {
+    margin: 0;
+    color: #777;
+    font-size: 14px;
+}
+
+/* DECORATION */
+.account-decoration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 15px 0;
+}
+
+.account-decoration span {
+    width: 50px;
+    height: 1px;
+    background-color: #C5AB88;
+}
+
+.account-decoration i {
+    color: #9b725f;
+    font-size: 18px;
+}
+
+/* THÔNG BÁO */
+.account-alert {
+    max-width: 850px;
+    margin: 0 auto 20px;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.account-alert.success {
+    background-color: #edf7ed;
+    border: 1px solid #c9e5c9;
+    color: #497249;
+}
+
+/* ACCOUNT CARD */
+.account-card {
+    max-width: 850px;
+    margin: auto;
+    background-color: #ffffff;
+    border: 1px solid #eee4d8;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow:
+        0 10px 35px rgba(90, 75, 65, 0.07);
+}
+
+/* SECTION */
+.account-section {
+    padding: 35px 40px;
+}
+
+.account-section + .account-section {
+    border-top: 1px solid #eee4d8;
+}
+
+/* SECTION TITLE */
+.account-section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.account-section-title span {
+    color: #a58c72;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.account-section-title h2 {
+    margin: 4px 0 0;
+    color: #4a3e3d;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.account-title-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #F8F1E4;
+    color: #9b725f;
+    font-size: 20px;
+}
+
+/* THÔNG TIN */
+.account-info-list {
+    border-top: 1px solid #eee4d8;
+}
+
+.account-info-row {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    padding: 20px 5px;
+    border-bottom: 1px solid #eee4d8;
+}
+
+.account-info-icon {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #F8F1E4;
+    color: #9b725f;
+}
+
+.account-info-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.account-info-content span {
+    color: #999;
+    font-size: 12px;
+}
+
+.account-info-content strong {
+    color: #51453f;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* BUTTON CHỈNH SỬA */
+.account-action {
+    margin-top: 25px;
+    text-align: right;
+}
+
+.account-btn,
+.password-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 20px;
+    border: none;
+    border-radius: 6px;
+    background-color: #F4E1C5;
+    color: #5a4b41;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.account-btn:hover,
+.password-btn:hover {
+    background-color: #C5AB88;
+    color: #ffffff;
+}
+
+/* SECURITY */
+.security-section {
+    background-color: #fffdf9;
+}
+
+.security-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.security-info {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.security-icon {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #F4E1C5;
+    color: #8c6239;
+    font-size: 20px;
+}
+
+.security-info span {
+    color: #777;
+    font-size: 12px;
+}
+
+.password-dots {
+    margin: 3px 0;
+    color: #51453f;
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+
+.security-info p {
+    margin: 4px 0 0;
+    color: #999;
+    font-size: 12px;
+}
+
+/* FORM CHỈNH SỬA */
+.account-form-card {
+    max-width: 650px;
+    margin: auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border: 1px solid #eee4d8;
+    border-radius: 12px;
+    box-shadow:
+        0 10px 35px rgba(90, 75, 65, 0.07);
+}
+
+.account-form-group {
+    margin-bottom: 22px;
+}
+
+.account-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #51453f;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.account-form-group input {
+    width: 100%;
+    height: 48px;
+    padding: 0 15px;
+    border: 1px solid #ded4ca;
+    border-radius: 7px;
+    background-color: #ffffff;
+    color: #4a3e3d;
+    font-size: 14px;
+    outline: none;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.account-form-group input:focus {
+    border-color: #C5AB88;
+    box-shadow:
+        0 0 0 3px rgba(197, 171, 136, 0.12);
+}
+
+.account-error {
+    margin-top: 6px;
+    color: #b85c55;
+    font-size: 12px;
+}
+
+/* BUTTON FORM */
+.account-form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.account-back-btn,
+.account-save-btn {
+    min-height: 45px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 20px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.account-back-btn {
+    border: 1px solid #ded4ca;
+    background-color: #ffffff;
+    color: #6e625b;
+}
+
+.account-back-btn:hover {
+    background-color: #F8F1E4;
+    color: #51453f;
+}
+
+.account-save-btn {
+    border: none;
+    background-color: #C5AB88;
+    color: #ffffff;
+}
+
+.account-save-btn:hover {
+    background-color: #a98c69;
+}
+
+/* POPUP ĐỔI MẬT KHẨU */
+.password-modal-overlay {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgba(55, 45, 40, 0.45);
+    z-index: 30000;
+}
+
+.password-modal-overlay.show {
+    display: flex;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+/* THẺ ĐỔI MẬT KHẨU */
+.password-modal-card {
+    width: 100%;
+    max-width: 520px;
+    max-height: calc(100vh - 40px);
+    padding: 30px;
+    overflow-y: auto;
+    background-color: #ffffff;
+    border: 1px solid #eee4d8;
+    border-radius: 14px;
+    box-shadow:
+        0 20px 60px rgba(55, 45, 40, 0.25);
+    animation: passwordModalOpen 0.25s ease;
+}
+
+@keyframes passwordModalOpen {
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* HEADER POPUP */
+.password-modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.password-modal-label {
+    color: #a58c72;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.password-modal-header h3 {
+    margin: 5px 0 0;
+    color: #4a3e3d;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.password-modal-description {
+    margin: 0 0 25px;
+    color: #888;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* DẤU X */
+.password-modal-close {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background-color: #F8F1E4;
+    color: #6e5a4f;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.password-modal-close:hover {
+    background-color: #F4E1C5;
+    transform: rotate(90deg);
+}
+
+/* INPUT PASSWORD + CON MẮT */
+.password-input {
+    position: relative;
+}
+
+.password-input input {
+    padding-right: 50px;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 7px;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    color: #8c7769;
+    cursor: pointer;
+}
+
+.toggle-password:hover {
+    color: #5a4b41;
+}
+
+/* BUTTON POPUP */
+.password-modal-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.password-cancel-btn,
+.password-save-btn {
+    min-height: 44px;
+    padding: 0 20px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.password-cancel-btn {
+    border: 1px solid #ded4ca;
+    background-color: #ffffff;
+    color: #6e625b;
+}
+
+.password-cancel-btn:hover {
+    background-color: #F8F1E4;
+}
+
+.password-save-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    border: none;
+    background-color: #C5AB88;
+    color: #ffffff;
+}
+
+.password-save-btn:hover {
+    background-color: #a98c69;
+}
+
+/* RESPONSIVE */
+@media (max-width: 767px) {
+    .account-page {
+        padding: 25px 0 60px;
+    }
+
+    .account-heading h1 {
+        font-size: 27px;
+    }
+
+    .account-section {
+        padding: 25px 20px;
+    }
+
+    .account-form-card {
+        padding: 25px 20px;
+    }
+
+    .security-content {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .password-btn {
+        width: 100%;
+    }
+
+    .account-form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .account-back-btn,
+    .account-save-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 575px) {
+    .password-modal-card {
+        padding: 24px 20px;
+    }
+
+    .password-modal-actions {
+        flex-direction: column-reverse;
+    }
+
+    .password-cancel-btn,
+    .password-save-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* TRỞ VỀ TRANG CHỦ */
+.account-home-link {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #79685f;
+    font-size: 14px;
+    text-decoration: none;
+    transition:
+        color 0.2s ease,
+        gap 0.2s ease;
+}
+
+.account-home-link:hover {
+    color: #9b725f;
+    gap: 12px;
+}
+
+@media (max-width: 767px) {
+    .account-home-link {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin: 20px 20px 0;
+    }
+}

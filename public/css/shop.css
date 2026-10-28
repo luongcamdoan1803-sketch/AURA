@@ -1,0 +1,205 @@
+:root {
+    --primary-color: #8C6239;
+    --primary-hover: #6D4C2B;
+    --bg-main: #FDFBF7;
+    --card-bg: #FFFFFF;
+    --text-main: #333333;
+    --text-muted: #777777;
+    --border-color: #EBDCCB;
+}
+
+/* Reset nhẹ */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-main);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-main);
+    margin: 0;
+}
+
+.flower-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .flower-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .flower-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== CARD ===== */
+.flower-card {
+    height: auto !important;
+    display: block !important;
+    background: #FFFFFF;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    margin-bottom: 24px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.flower-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Khung ảnh cố định 240px */
+.flower-card .img-box {
+    width: 100%;
+    height: 240px !important;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    position: relative;
+}
+
+.flower-card .img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Phần nội dung */
+.flower-card .card-body {
+    padding: 12px 14px !important;
+    display: block !important;
+    text-align: center !important;
+}
+
+.flower-card .flower-title {
+    font-size: 1.05rem !important;
+    font-weight: 700 !important;
+    color: #1a1a1a !important;
+    margin-bottom: 4px !important;
+    white-space: nowrap !important;       
+    overflow: hidden !important;         
+    text-overflow: ellipsis !important;  
+    display: block !important;
+}
+
+.flower-card .star-box {
+    margin-bottom: 4px !important;
+    font-size: 0.85rem !important;
+}
+
+.flower-card .flower-price {
+    font-size: 1.2rem !important;
+    font-weight: 800 !important;
+    color: #A34828 !important;
+    margin-bottom: 8px !important;
+}
+
+.flower-card .btn-detail {
+    display: block !important;
+    width: 100% !important;
+    padding: 7px 0 !important;
+    font-size: 0.9rem !important;
+    margin-top: 0 !important;
+}
+
+.flower-card .star-box {
+    color: #F5A623;
+    font-size: 0.9rem;
+}
+
+.btn-detail {
+    margin-top: auto;
+    background-color: #F1E5D8;
+    color: var(--primary-color);
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    width: 100%;
+    transition: 0.25s;
+}
+
+.btn-detail:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+/* ===== MODAL ===== */
+.modal-flower-content {
+    background: #FFFCF9;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.modal-img-container {
+    height: 480px;
+    background: #f7f3ed;
+    overflow: hidden;
+}
+
+.modal-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsive modal */
+@media (max-width: 768px) {
+    .modal-img-container {
+        height: 260px;
+    }
+}
+
+.btn-add-cart {
+    background: #F1E5D8;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 8px;
+}
+
+.btn-add-cart:hover {
+    background: #e2ceba;
+}
+
+.btn-buy-now {
+    background: var(--primary-color);
+    color: #ffffff;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: none;
+}
+
+.btn-buy-now:hover {
+    background: var(--primary-hover);
+}
+
+.pagination .page-link {
+    color: var(--primary-color);
+    border-color: var(--border-color);
+}
+
+.pagination .active .page-link {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+}
+
+.modal {
+    z-index: 30000 !important;
+}
+
+.modal-backdrop {
+    z-index: 29999 !important;
+}
