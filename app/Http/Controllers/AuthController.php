@@ -38,7 +38,7 @@ class AuthController extends Controller
 
 
             // Nếu là Admin
-            if (Auth::user()->role === 'admin') {
+            if ((int) Auth::user()->role === 1) {
                 return redirect()
                     ->route('admin.index');
             }

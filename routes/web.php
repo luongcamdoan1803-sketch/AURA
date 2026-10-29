@@ -48,7 +48,7 @@ Route::post('/login', function () {
         request()->session()->regenerate();
 
         /* Nếu là ADMIN thì chuyển đến trang Admin */
-        if (Auth::user()->role === 'admin') {
+        if ((int) Auth::user()->role === 1) {
             return redirect()->route('admin.index');
         }
 
@@ -283,7 +283,7 @@ use App\Models\Review;
 use Illuminate\Support\Str;
 //tất cả sp
 
-Route::post('/product/{id}/review', [ReviewController::class, 'store'])->middleware('auth') ->name('reviews.store');
+Route::post('/product/{id}/review', [ReviewController::class, 'store'])->middleware('auth')->name('reviews.store');
 Route::get('/api/product/{id}', [ProductController::class, 'getProductJson']);
 Route::get('/tat-ca-san-pham', [ProductController::class, 'allProducts'])->name('products.all');
 Route::get('/product-json/{id}', [ProductController::class, 'getProductJson'])->name('product.json');
