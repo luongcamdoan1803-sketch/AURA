@@ -15,6 +15,7 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->enum('style', ['gio', 'bo', 'hop'])->nullable();
             $table->decimal('price', 12, 2);
+            $table->integer('discount_percent')->default(0); // Đã bổ sung cột discount_percent
             $table->string('image')->default('default.jpg');
             $table->text('description')->nullable();
             $table->float('rating')->default(5.0);
