@@ -62,12 +62,19 @@ class Order extends Model
             'processing' => 'Đang xử lý',
             'shipping'   => 'Đang giao hàng',
             'completed'  => 'Đã hoàn thành',
+            'cancelled'  => 'Đã hủy',
         ][$this->status] ?? $this->status;
     }
 
-    /* Class màu cho nhãn trạng thái (định nghĩa trong cart.css) */
+    /* Class màu cho nhãn trạng thái */
     public function getStatusClassAttribute(): string
     {
-        return 'status-' . $this->status;
+        return [
+            'pending'    => 'bg-warning text-dark',
+            'processing' => 'bg-info text-white',
+            'shipping'   => 'bg-primary text-white',
+            'completed'  => 'bg-success text-white',
+            'cancelled'  => 'bg-danger text-white',
+        ][$this->status] ?? 'bg-secondary text-white';
     }
 }

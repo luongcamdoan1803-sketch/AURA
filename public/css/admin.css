@@ -1,0 +1,492 @@
+/* ==========================================================================
+   AURA FLORIST - BẢN ĐỊNH DẠNG CSS TRANG QUẢN TRỊ (ADMIN.CSS)
+   Người phụ trách: Phương Uyên
+   Tone màu quy định AURA Florist:
+   - Background chung: #FDFBF7
+   - Section (thanh ngang danh mục, sidebar header, card header): #F8F1E4
+   - Button: #F4E1C5
+   - Button hover: #C5AB88
+   ========================================================================== */
+
+:root {
+    --aura-bg: #FDFBF7;
+    --aura-section: #F8F1E4;
+    --aura-btn: #F4E1C5;
+    --aura-btn-hover: #C5AB88;
+    --aura-primary: #7A5C43;
+    --aura-primary-dark: #5C4028;
+    --aura-text: #2C2523;
+    --aura-text-muted: #7E736B;
+    --aura-border: #E8DDD2;
+    --aura-card-shadow: 0 4px 20px rgba(122, 92, 67, 0.06);
+    --aura-sidebar-width: 260px;
+    --aura-font-serif: "Times New Roman", Times, serif;
+    --aura-font-sans: "Times New Roman", Times, serif;
+}
+
+body.admin-body {
+    background-color: var(--aura-bg);
+    color: var(--aura-text);
+    font-family: "Times New Roman", Times, serif !important;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body.admin-body h1, 
+body.admin-body h2, 
+body.admin-body h3, 
+body.admin-body h4, 
+body.admin-body h5, 
+body.admin-body h6,
+body.admin-body p, 
+body.admin-body a, 
+body.admin-body span:not([class*="fa"]):not([class*="bi"]), 
+body.admin-body div:not([class*="fa"]):not([class*="bi"]), 
+body.admin-body button, 
+body.admin-body input, 
+body.admin-body select, 
+body.admin-body textarea, 
+body.admin-body table, 
+body.admin-body th, 
+body.admin-body td {
+    font-family: "Times New Roman", Times, serif !important;
+}
+
+/* Bảo toàn tuyệt đối font cho Icons (Font Awesome & Bootstrap Icons) */
+.fa-solid, .fas, i.fa-solid, i.fas {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+    font-style: normal !important;
+}
+
+.fa-regular, .far, i.fa-regular, i.far {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+}
+
+.fa-brands, .fab, i.fa-brands, i.fab {
+    font-family: "Font Awesome 6 Brands" !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+}
+
+.bi, [class^="bi-"], [class*=" bi-"] {
+    font-family: "bootstrap-icons" !important;
+    font-style: normal !important;
+}
+
+/* ==================== LAYOUT TỔNG THỂ ==================== */
+.admin-wrapper {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* ==================== SIDEBAR ==================== */
+.admin-sidebar {
+    width: var(--aura-sidebar-width);
+    background-color: var(--aura-section);
+    border-right: 1px solid var(--aura-border);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.admin-brand {
+    padding: 1.5rem 1.25rem;
+    border-bottom: 1px solid var(--aura-border);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.admin-brand-icon {
+    width: 42px;
+    height: 42px;
+    background-color: var(--aura-btn);
+    color: var(--aura-primary);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    box-shadow: 0 2px 8px rgba(197, 171, 136, 0.25);
+}
+
+.admin-brand-title {
+    font-family: var(--aura-font-serif);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--aura-primary-dark);
+    line-height: 1.2;
+    margin: 0;
+}
+
+.admin-brand-subtitle {
+    font-size: 0.75rem;
+    color: var(--aura-text-muted);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.admin-nav {
+    padding: 1.25rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.admin-nav-heading {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--aura-text-muted);
+    padding: 0.75rem 0.75rem 0.25rem 0.75rem;
+    font-weight: 600;
+}
+
+.admin-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0.75rem 1rem;
+    color: var(--aura-text);
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.admin-nav-link i {
+    font-size: 1.15rem;
+    color: var(--aura-text-muted);
+    transition: color 0.2s ease;
+    width: 22px;
+    text-align: center;
+}
+
+.admin-nav-link:hover {
+    background-color: var(--aura-btn);
+    color: var(--aura-primary-dark);
+}
+
+.admin-nav-link:hover i {
+    color: var(--aura-primary-dark);
+}
+
+.admin-nav-link.active {
+    background-color: var(--aura-btn);
+    color: var(--aura-primary-dark);
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(197, 171, 136, 0.2);
+}
+
+.admin-nav-link.active i {
+    color: var(--aura-primary-dark);
+}
+
+.admin-sidebar-footer {
+    padding: 1rem;
+    border-top: 1px solid var(--aura-border);
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* ==================== MAIN CONTENT & TOPBAR ==================== */
+.admin-main {
+    margin-left: var(--aura-sidebar-width);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.admin-topbar {
+    height: 70px;
+    background-color: var(--aura-section);
+    border-bottom: 1px solid var(--aura-border);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.admin-content {
+    padding: 2rem;
+    flex: 1;
+}
+
+/* ==================== BUTTONS (QUY ĐỊNH CHUNG) ==================== */
+.btn-aura {
+    background-color: var(--aura-btn);
+    color: var(--aura-primary-dark) !important;
+    border: 1px solid var(--aura-btn);
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 0.55rem 1.25rem;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-aura:hover, .btn-aura:focus {
+    background-color: var(--aura-btn-hover);
+    border-color: var(--aura-btn-hover);
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 12px rgba(197, 171, 136, 0.35);
+}
+
+.btn-aura-outline {
+    background-color: transparent;
+    color: var(--aura-primary-dark) !important;
+    border: 1px solid var(--aura-btn-hover);
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 0.55rem 1.25rem;
+    transition: all 0.2s ease;
+}
+
+.btn-aura-outline:hover {
+    background-color: var(--aura-btn-hover);
+    color: #FFFFFF !important;
+}
+
+.btn-outline-secondary {
+    border-color: var(--aura-border);
+    color: var(--aura-primary-dark);
+}
+
+/* ==================== CARDS & TIÊU ĐỀ ==================== */
+.admin-card {
+    background-color: #FFFFFF;
+    border: 1px solid var(--aura-border);
+    border-radius: 14px;
+    box-shadow: var(--aura-card-shadow);
+    margin-bottom: 1.75rem;
+    overflow: hidden;
+}
+
+.admin-card-header {
+    background-color: var(--aura-section);
+    border-bottom: 1px solid var(--aura-border);
+    padding: 1.15rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.admin-card-title {
+    font-family: var(--aura-font-serif);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--aura-primary-dark);
+    margin: 0;
+}
+
+.admin-card-body {
+    padding: 1.5rem;
+}
+
+/* ==================== THẺ THỐNG KÊ (STAT CARDS) ==================== */
+.stat-card {
+    background-color: #FFFFFF;
+    border: 1px solid var(--aura-border);
+    border-radius: 14px;
+    padding: 1.5rem;
+    box-shadow: var(--aura-card-shadow);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 100%;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(122, 92, 67, 0.1);
+}
+
+.stat-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    background-color: var(--aura-section);
+    color: var(--aura-primary);
+}
+
+.stat-icon.revenue {
+    background-color: #EBF8F2;
+    color: #2F855A;
+}
+
+.stat-icon.orders {
+    background-color: #EBF4FF;
+    color: #3182CE;
+}
+
+.stat-icon.products {
+    background-color: #FFF5F5;
+    color: #C53030;
+}
+
+.stat-icon.users {
+    background-color: #FAF5FF;
+    color: #805AD5;
+}
+
+.stat-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    line-height: 1.2;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--aura-text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ==================== BẢNG DỮ LIỆU (TABLES) ==================== */
+.admin-table-container {
+    overflow-x: auto;
+}
+
+.admin-table {
+    width: 100%;
+    margin-bottom: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.admin-table thead th {
+    background-color: var(--aura-section);
+    color: var(--aura-primary-dark);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid var(--aura-border);
+    white-space: nowrap;
+}
+
+.admin-table tbody td {
+    padding: 1rem;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--aura-border);
+    color: var(--aura-text);
+    font-size: 0.95rem;
+}
+
+.admin-table tbody tr:hover {
+    background-color: rgba(248, 241, 228, 0.4);
+}
+
+.admin-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ==================== BADGES & NHÃN TRẠNG THÁI ==================== */
+.status-badge {
+    padding: 0.35rem 0.75rem;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.status-pending {
+    background-color: #FEFCBF;
+    color: #744210;
+}
+
+.status-processing {
+    background-color: #BEE3F8;
+    color: #2A4365;
+}
+
+.status-shipping {
+    background-color: #EBF8FF;
+    color: #2B6CB0;
+}
+
+.status-completed {
+    background-color: #C6F6D5;
+    color: #22543D;
+}
+
+.status-cancelled {
+    background-color: #FED7D7;
+    color: #742A2A;
+}
+
+/* ==================== ẢNH HOA TRONG BẢNG ==================== */
+.flower-thumb {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--aura-border);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* ==================== FORM INPUTS ==================== */
+.form-control:focus, .form-select:focus {
+    border-color: var(--aura-btn-hover);
+    box-shadow: 0 0 0 0.25rem rgba(197, 171, 136, 0.25);
+}
+
+.preview-image-box {
+    width: 140px;
+    height: 140px;
+    border: 2px dashed var(--aura-border);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: var(--aura-section);
+}
+
+.preview-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+    .admin-sidebar {
+        transform: translateX(-100%);
+    }
+    .admin-sidebar.show {
+        transform: translateX(0);
+    }
+    .admin-main {
+        margin-left: 0;
+    }
+}

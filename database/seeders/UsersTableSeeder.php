@@ -36,7 +36,7 @@ class UsersTableSeeder extends Seeder
                     'id' => 3,
                     'name' => 'Admin',
                     'email' => 'admin@gmail.com',
-                    'password' => '$2y$10$ipWs3gQdAwEfuwKUzvEsxOCwDXMa.GC0uwAzFpBrUGVQmrm8oUyE6',
+                    'password' => '$2y$10$d6/qoWiqFY7gfKgwgBKK3OxBlQ3DpBmBtpQYrRXSpnRm80YdElIma',
                     'phone' => NULL,
                     'address' => NULL,
                     'role' => 1,

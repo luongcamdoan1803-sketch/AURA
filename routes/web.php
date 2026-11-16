@@ -15,6 +15,11 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\AdminProductController;
+use App\Http\Controllers\Admin\AdminCategoryController;
+use App\Http\Controllers\Admin\AdminOrderController;
+use App\Http\Controllers\Admin\AdminUserController;
 
 /* Trang chủ */
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -150,18 +155,28 @@ Route::post('/contact/send', function (Request $request) {
     return view('contact-success');
 })->name('contact.send');
 
-/* Trang Admin */
-Route::get('/admin', function () {
-    if (!Auth::check()) {
-        return redirect()->route('login');
-    }
+/* ==================== KHU VỰC QUẢN TRỊ ADMIN (PHƯƠNG UYÊN) ==================== */
+Route::prefix('admin')->middleware(['auth', 'admin'])->name('admin.')->group(function () {
+    // 1. Dashboard & Thống kê doanh thu theo nhiều tiêu chí (Loại sp, sp, khách hàng)
+    Route::get('/', [DashboardController::class, 'index'])->name('index');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-    if (Auth::user()->role !== 'admin') {
-        return redirect('/');
-    }
+    // 2. Quản lý Sản phẩm Hoa (CRUD đầy đủ)
+    Route::resource('products', AdminProductController::class);
 
-    return view('admin.index');
-})->name('admin.index');
+    // 3. Quản lý Danh mục Hoa (CRUD ít nhất 2 bảng quan hệ Categories & Products)
+    Route::resource('categories', AdminCategoryController::class);
+
+    // 4. Quản lý & Xử lý Đơn hàng (Duyệt đơn, xử lý, giao hàng)
+    Route::get('orders', [AdminOrderController::class, 'index'])->name('orders.index');
+    Route::get('orders/{id}', [AdminOrderController::class, 'show'])->name('orders.show');
+    Route::patch('orders/{id}/status', [AdminOrderController::class, 'updateStatus'])->name('orders.updateStatus');
+
+    // 5. Quản lý Khách hàng & Tài khoản
+    Route::get('users', [AdminUserController::class, 'index'])->name('users.index');
+    Route::patch('users/{id}/role', [AdminUserController::class, 'toggleRole'])->name('users.toggleRole');
+    Route::delete('users/{id}', [AdminUserController::class, 'destroy'])->name('users.destroy');
+});
 
 Route::get('/faq', function () {
     return view('faq');

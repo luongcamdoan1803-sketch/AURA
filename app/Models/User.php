@@ -22,12 +22,25 @@ class User extends Authenticatable
         'email',
         'password',
         'phone',
+        'address',
         'role',
     ];
+
     public function reviews()
     {
         return $this->hasMany(Review::class);
     }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
+    public function isAdmin(): bool
+    {
+        return (int) $this->role === 1 || $this->role === 'admin';
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *
