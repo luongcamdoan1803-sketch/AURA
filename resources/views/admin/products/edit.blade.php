@@ -83,7 +83,7 @@
 
                     <div class="mb-3">
                         <label class="form-label fw-semibold">Mô tả ý nghĩa & Thành phần hoa</label>
-                        <textarea name="description" rows="4" class="form-control">{{ old('description', $product->description) }}</textarea>
+                        <textarea name="description" rows="4" class="form-control" placeholder="Mô tả ý nghĩa và thành phần hoa...">{{ old('description', $product->clean_description) }}</textarea>
                     </div>
                 </div>
             </div>
@@ -96,12 +96,7 @@
                 <div class="admin-card-body">
                     <div class="d-flex flex-wrap gap-4 align-items-center">
                         <div class="preview-image-box shadow-sm" id="imagePreviewBox">
-                            @php
-                                $imgSrc = file_exists(public_path('images/' . $product->image)) 
-                                    ? asset('images/' . $product->image) 
-                                    : asset('images/default.jpg');
-                            @endphp
-                            <img src="{{ $imgSrc }}" alt="{{ $product->name }}" id="imagePreview" onerror="this.src='https://placehold.co/140x140?text=AURA';">
+                            <img src="{{ $product->image_url }}" alt="{{ $product->name }}" id="imagePreview" onerror="this.onerror=null; this.src='{{ asset('images/about-flower.jpg') }}';">
                         </div>
 
                         <div class="flex-grow-1">

@@ -174,13 +174,11 @@
                             @forelse($topProducts as $item)
                                 @php
                                     $p = $item['product'];
-                                    $imgSrc = file_exists(public_path('images/' . $p->image)) 
-                                        ? asset('images/' . $p->image) 
-                                        : asset('images/default.jpg');
+                                    $imgSrc = $p ? $p->image_url : asset('images/about-flower.jpg');
                                 @endphp
                                 <tr>
                                     <td>
-                                        <img src="{{ $imgSrc }}" alt="{{ $p->name }}" class="flower-thumb" style="width: 44px; height: 44px;" onerror="this.src='https://placehold.co/44x44?text=AURA';">
+                                        <img src="{{ $imgSrc }}" alt="{{ $p->name ?? 'Hoa' }}" class="flower-thumb" style="width: 44px; height: 44px;" onerror="this.onerror=null; this.src='{{ asset('images/about-flower.jpg') }}';">
                                     </td>
                                     <td>
                                         <div class="fw-bold text-dark small">{{ $p->name }}</div>

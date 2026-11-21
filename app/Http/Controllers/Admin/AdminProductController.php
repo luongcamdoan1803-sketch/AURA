@@ -81,11 +81,12 @@ class AdminProductController extends Controller
         }
 
         // Xử lý upload ảnh
-        $imageName = 'default.jpg';
+        $imagePath = 'images/about-flower.jpg';
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $imageName = time() . '_' . Str::slug(pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)) . '.' . $file->getClientOriginalExtension();
             $file->move(public_path('images'), $imageName);
+            $imagePath = 'images/' . $imageName;
         }
 
         Product::create([
@@ -95,8 +96,8 @@ class AdminProductController extends Controller
             'price'            => $validated['price'],
             'discount_percent' => $validated['discount_percent'] ?? 0,
             'style'            => $validated['style'] ?? null,
-            'image'            => $imageName,
-            'description'      => $validated['description'] ?? null,
+            'image'            => $imagePath,
+            'description'      => isset($validated['description']) ? trim(strip_tags($validated['description'])) : null,
             'rating'           => 5.0,
         ]);
 
@@ -155,7 +156,7 @@ class AdminProductController extends Controller
             $file = $request->file('image');
             $imageName = time() . '_' . Str::slug(pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)) . '.' . $file->getClientOriginalExtension();
             $file->move(public_path('images'), $imageName);
-            $product->image = $imageName;
+            $product->image = 'images/' . $imageName;
         }
 
         $product->category_id      = $validated['category_id'];
@@ -163,7 +164,7 @@ class AdminProductController extends Controller
         $product->price            = $validated['price'];
         $product->discount_percent = $validated['discount_percent'] ?? 0;
         $product->style            = $validated['style'] ?? null;
-        $product->description      = $validated['description'] ?? null;
+        $product->description      = isset($validated['description']) ? trim(strip_tags($validated['description'])) : null;
         $product->save();
 
         return redirect()->route('admin.products.index')

@@ -131,12 +131,9 @@
                         <tr>
                             <td>
                                 @php
-                                    $img = $item->product ? $item->product->image : 'default.jpg';
-                                    $imgSrc = file_exists(public_path('images/' . $img)) 
-                                        ? asset('images/' . $img) 
-                                        : asset('images/default.jpg');
+                                    $imgSrc = $item->product ? $item->product->image_url : asset('images/about-flower.jpg');
                                 @endphp
-                                <img src="{{ $imgSrc }}" alt="{{ $item->product->name ?? 'Hoa' }}" class="flower-thumb" onerror="this.src='https://placehold.co/80x80?text=AURA';">
+                                <img src="{{ $imgSrc }}" alt="{{ $item->product->name ?? 'Hoa' }}" class="flower-thumb" onerror="this.onerror=null; this.src='{{ asset('images/about-flower.jpg') }}';">
                             </td>
                             <td>
                                 <div class="fw-bold text-dark">{{ $item->product->name ?? 'Sản phẩm đã bị xóa hoặc ngưng bán' }}</div>
