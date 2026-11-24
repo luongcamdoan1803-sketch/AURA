@@ -2,11 +2,13 @@
 <div class="bg-section py-2 border-bottom">
     <div class="container d-flex justify-content-between align-items-center">
         <!-- Logo -->
-        <div class="logo fw-bold fs-4 text-uppercase tracking-wide" style="letter-spacing: 2px; color: #5a4b41;">
-            <a href="{{ url('/') }}" class="text-decoration-none text-dark">
-                AURA FLORIST
-            </a>
-        </div>
+        <div class="logo">
+    <a href="{{ url('/') }}" class="text-decoration-none">
+        <img src="{{ asset('images/Logo.png') }}"
+             alt="AURA FLORIST"
+             style="height: 100px; width: auto; object-fit: contain;">
+    </a>
+</div>
         <!-- Thanh tìm kiếm -->
         <div class="w-50 mx-3">
             <form action="{{ route('shop.index') }}" method="GET" class="d-flex">
