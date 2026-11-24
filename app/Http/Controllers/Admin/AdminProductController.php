@@ -15,7 +15,7 @@ class AdminProductController extends Controller
      */
     public function index(Request $request)
     {
-        $query = Product::with('category');
+        $query = Product::with(['category', 'reviews']);
 
         // Tìm kiếm theo tên sản phẩm
         if ($request->filled('keyword')) {
@@ -98,7 +98,7 @@ class AdminProductController extends Controller
             'style'            => $validated['style'] ?? null,
             'image'            => $imagePath,
             'description'      => isset($validated['description']) ? trim(strip_tags($validated['description'])) : null,
-            'rating'           => 5.0,
+            'rating'           => 0.0,
         ]);
 
         return redirect()->route('admin.products.index')

@@ -43,11 +43,11 @@
                         <div class="text-warning me-2">
                             <i class="fa-solid fa-star"></i>
                             <span class="fw-bold text-dark ms-1">
-                                {{ $reviews->count() > 0 ? number_format($reviews->avg('rating'), 1) : '0.0' }}
+                                {{ $product->reviews->count() > 0 ? number_format($product->reviews->avg('rating'), 1) : '0.0' }}
                             </span>
                         </div>
                         <span class="text-muted small">
-                            ({{ $reviews->count() }} lượt đánh giá)
+                            ({{ $product->reviews->count() }} lượt đánh giá)
                         </span>
                     </div>
                     <div class="mb-3">
@@ -110,7 +110,7 @@
                 </h4>
 
                 <span class="badge bg-light text-dark fs-6">
-                    {{ $reviews->count() }} bình luận
+                    {{ $product->reviews->count() }} bình luận
                 </span>
             </div>
 
@@ -181,9 +181,9 @@
                 @endauth
             </div>
 
-            <!-- Danh sách bình luận dùng chung cho tất cả hoa -->
+            <!-- Danh sách bình luận riêng của từng sản phẩm -->
             <div class="review-list">
-                @forelse($reviews as $rev)
+                @forelse($product->reviews as $rev)
                         <div class="border-bottom py-3">
                             <div class="d-flex justify-content-between align-items-center mb-1">
                                 <span class="fw-bold text-dark">

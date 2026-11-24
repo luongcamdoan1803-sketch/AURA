@@ -12,7 +12,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('product_id')->constrained('products')->onDelete('cascade');
             $table->string('user_id'); // Cột tên người đánh giá
-            $table->tinyInteger('rating')->default(5);
+            $table->decimal('rating', 2, 1);
             $table->text('content');
             $table->timestamps();
         });

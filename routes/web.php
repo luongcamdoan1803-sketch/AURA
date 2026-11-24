@@ -155,7 +155,7 @@ Route::post('/contact/send', function (Request $request) {
     return view('contact-success');
 })->name('contact.send');
 
-/* ==================== KHU VỰC QUẢN TRỊ ADMIN (PHƯƠNG UYÊN) ==================== */
+/* ==================== KHU VỰC QUẢN TRỊ ADMIN ==================== */
 Route::prefix('admin')->middleware(['auth', 'admin'])->name('admin.')->group(function () {
     // 1. Dashboard & Thống kê doanh thu theo nhiều tiêu chí (Loại sp, sp, khách hàng)
     Route::get('/', [DashboardController::class, 'index'])->name('index');

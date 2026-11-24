@@ -35,27 +35,18 @@
                 <!-- Đã đăng nhập -->
                 <details class="position-relative">
                     <!-- Tên người dùng -->
-                    <summary style="
-                                                        cursor: pointer;
-                                                        list-style: none;
-                                                        color: #2f2a26;
-                                                        font-size: 16px;
-                                                        white-space: nowrap;
-                                                    ">
+                    <summary
+                        style=" cursor: pointer; list-style: none; color: #2f2a26; font-size: 16px; white-space: nowrap; ">
                         Xin chào! {{ Auth::user()->name }}
                         <span style="font-size: 12px; margin-left: 5px;">
                             ▼
                         </span>
                     </summary>
                     <!-- Menu tài khoản -->
-                    <div class="position-absolute bg-white border rounded shadow" style="
-                                                        top: 35px;
-                                                        right: 0;
-                                                        width: 200px;
-                                                        z-index: 9999;
-                                                    ">
+                    <div class="position-absolute bg-white border rounded shadow"
+                        style=" top: 35px; right: 0;width: 200px;z-index: 9999; ">
                         <!-- Tài khoản -->
-                        <a class="dropdown-item" href="{{ route('account.index') }}">
+                        <a href="{{ route('account.index') }}" class="d-block text-decoration-none text-dark px-3 py-2">
                             Tài khoản của tôi
                         </a>
                         <!-- Đơn hàng -->
@@ -64,7 +55,7 @@
                         </a>
                         <!-- Admin -->
                         @if(Auth::user()->role == 1)
-                            <a href="#" class="d-block text-decoration-none text-danger px-3 py-2">
+                            <a href="{{ route('admin.dashboard') }}" class="d-block text-decoration-none text-danger px-3 py-2">
                                 Trang Quản trị (Admin)
                             </a>
                         @endif
@@ -84,7 +75,8 @@
             <!-- Giỏ hàng -->
             <a href="{{ route('cart.index') }}" class="position-relative text-dark fs-5 ms-2" title="Giỏ hàng">
                 <i class="bi bi-cart3"></i>
-                <span class="js-cart-count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                <span
+                    class="js-cart-count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
                     style="font-size: 0.65rem;">{{ app(\App\Services\CartService::class)->count() }}</span>
             </a>
         </div>
@@ -106,7 +98,8 @@
                 </li>
                 <!-- CỬA HÀNG -->
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('promotion*') ? 'active' : '' }}" href="{{ route('products.all') }}">
+                    <a class="nav-link {{ request()->is('promotion*') ? 'active' : '' }}"
+                        href="{{ route('products.all') }}">
                         Cửa hàng
                     </a>
                 </li>

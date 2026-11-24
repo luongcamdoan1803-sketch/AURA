@@ -93,42 +93,53 @@ body {
 }
 
 /* 4. DROPDOWN MENU */
+
+/* 4. DROPDOWN MENU */
+
+/* Kiểu dáng chung cho dropdown */
+.aura-dropdown-menu,
+.aura-submenu-menu {
+    min-width: 190px;
+    padding: 8px;
+    background-color: #ffffff;
+    border: 1px solid #eee4d8;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(90, 75, 65, 0.15);
+}
+
+/* Dropdown cấp 1 */
 .aura-dropdown-menu {
     position: absolute;
     top: 100%;
     left: 0;
     z-index: 9999;
     display: none;
-    min-width: 190px;
     margin-top: 0;
-    padding: 8px;
-    background-color: #ffffff;
-    border: 1px solid #eee4d8;
-    border-radius: 6px;
-    box-shadow:
-        0 10px 30px rgba(90, 75, 65, 0.15);
 }
 
 /* Hiện dropdown khi hover */
-.aura-dropdown:hover > .aura-dropdown-menu {
-    display: block !important;
-}
-
-/* Giữ dropdown khi chuột nằm bên trong */
+.aura-dropdown:hover > .aura-dropdown-menu,
 .aura-dropdown-menu:hover {
     display: block !important;
 }
 
-/* Item */
-.aura-dropdown-menu .dropdown-item {
+/* Item dropdown */
+.aura-dropdown-menu .dropdown-item,
+.aura-submenu-menu .dropdown-item {
     padding: 10px 16px;
     color: #4a4a4a;
-    font-size: 14px;
     border-radius: 4px;
+}
+
+/* Kiểu chữ và hiệu ứng dropdown cấp 1 */
+.aura-dropdown-menu .dropdown-item {
+    font-size: 14px;
     transition: all 0.2s ease;
 }
 
-.aura-dropdown-menu .dropdown-item:hover {
+/* Hover item */
+.aura-dropdown-menu .dropdown-item:hover,
+.aura-submenu-menu .dropdown-item:hover {
     background-color: #f9f2e9;
     color: #211c1c;
 }
@@ -140,6 +151,7 @@ body {
 }
 
 /* 5. DROPDOWN CON CỦA DANH MỤC */
+
 .aura-submenu {
     position: relative;
 }
@@ -165,32 +177,13 @@ body {
     left: 100%;
     z-index: 10000;
     display: none !important;
-    min-width: 190px;
     margin: 0 !important;
-    padding: 8px;
-    background-color: #ffffff;
-    border: 1px solid #eee4d8;
-    border-radius: 6px;
-    box-shadow:
-        0 10px 30px rgba(90, 75, 65, 0.15);
 }
 
 .aura-submenu:hover > .aura-submenu-menu {
     display: block !important;
 }
-
-.aura-submenu-menu .dropdown-item {
-    padding: 10px 16px;
-    color: #4a4a4a;
-    border-radius: 4px;
-}
-
-.aura-submenu-menu .dropdown-item:hover {
-    background-color: #f9f2e9;
-    color: #211c1c;
-}
-
-/* 6. BUTTON CHUNG */
+/* . BUTTON CHUNG */
 .btn-aura {
     background-color: var(--btn-color);
     color: #4a3e3d;

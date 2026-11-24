@@ -243,23 +243,12 @@ class ProductController extends BaseController
 
     public function show($id)
     {
-        $product = Product::with('category')->findOrFail($id);
+        $product = Product::with([
+            'category',
+            'reviews.user'
+        ])->findOrFail($id);
 
-        // Lấy toàn bộ bình luận của tất cả hoa
-        $reviews = \App\Models\Review::with('user')
-            ->latest()
-            ->get();
-
-        // Điểm trung bình của toàn bộ bình luận
-        $averageRating = $reviews->count() > 0
-            ? $reviews->avg('rating')
-            : 0;
-
-        return view('shop.detail', compact(
-            'product',
-            'reviews',
-            'averageRating'
-        ));
+        return view('shop.detail', compact('product'));
     }
 
 
@@ -278,7 +267,7 @@ class ProductController extends BaseController
             : $product->price;
 
 
-        $reviews = Review::with('user')->latest()->get();
+        $reviews = $product->reviews()->with('user')->latest()->get();
 
         $reviewsData = $reviews->map(function ($rev) {
             return [

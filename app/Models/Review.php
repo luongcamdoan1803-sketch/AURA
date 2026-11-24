@@ -25,4 +25,28 @@ class Review extends Model
     {
         return $this->belongsTo(Product::class);
     }
+
+    // Tự động đồng bộ số sao khi thêm hoặc sửa đánh giá
+    protected static function booted()
+    {
+        static::saved(function ($review) {
+            self::updateProductRating($review->product_id);
+        });
+
+        // Tự động đồng bộ số sao khi xóa đánh giá
+        static::deleted(function ($review) {
+            self::updateProductRating($review->product_id);
+        });
+    }
+
+    // Tính lại điểm trung bình của từng sản phẩm
+    protected static function updateProductRating($productId)
+    {
+        $averageRating = self::where('product_id', $productId)
+            ->avg('rating') ?? 0;
+
+        Product::where('id', $productId)->update([
+            'rating' => round($averageRating, 1)
+        ]);
+    }
 }

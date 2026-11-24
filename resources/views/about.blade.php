@@ -17,10 +17,6 @@
                 Chúng tôi tin rằng hoa không chỉ là một món quà,
                 mà còn là cách để bạn gửi gắm yêu thương.
             </p>
-            <a href="{{ route('products.index') }}" class="about-btn">
-                Khám phá bộ sưu tập
-                <span>→</span>
-            </a>
         </div>
     </section>
     <!-- STORY -->
@@ -230,7 +226,7 @@
                     Hãy để chúng tôi<br>
                     <span>cùng bạn tạo nên khoảnh khắc đẹp.</span>
                 </h2>
-                <a href="{{ route('products.index') }}" class="about-btn light-btn">
+                <a href="{{ route('products.all') }}" class="about-btn light-btn">
                     Chọn một bó hoa
                     <span>→</span>
                 </a>
